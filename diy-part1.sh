@@ -25,4 +25,8 @@ sed -i 's|src-git-full openstick https://github.com/lkiuyu/openstick-feeds.git|s
 # EOF
 
 # inspect
+sed -i '$a src-git openstick https://github.com/lkiuyu/openstick-feeds.git' feeds.conf.default
+./scripts/feeds update openstick
+./scripts/feeds install -p openstick
+
 echo ">>> OPP VOLTAGE COUNT: $(grep -c 'opp-microvolt' target/linux/msm89xx/dts/msm8916.dtsi) <<<"
