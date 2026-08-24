@@ -13,3 +13,11 @@ git clone https://github.com/lkiuyu/DbusSmsForwardCPlus package/DbusSmsForwardCP
 # 北大源
 cp -r "$GITHUB_WORKSPACE/scripts/files-8916" "$GITHUB_WORKSPACE/openwrt/files"
 ls -R "$GITHUB_WORKSPACE/openwrt/files"
+cat > .config <<EOF
+CONFIG_TARGET_msm89xx=y
+CONFIG_TARGET_msm89xx_generic_DEVICE_ufi003=y
+CONFIG_PACKAGE_luci-app-qmodem-next=y
+CONFIG_PACKAGE_modemmanager=y
+CONFIG_PACKAGE_qcom-firmware=y
+CONFIG_PACKAGE_ncm-gadget=y
+EOF
